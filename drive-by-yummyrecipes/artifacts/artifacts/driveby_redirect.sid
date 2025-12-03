@@ -1,7 +1,0 @@
-alert http any any -> any any (
-    msg:"Drive-by Compromise – Suspicious JS redirect";
-    content:"location.href"; nocase;
-    content:"http"; distance:0; within:100;
-    classtype:web-application-attack;
-    sid:9000001; rev:2;
-)
