@@ -58,10 +58,10 @@ alert http any any -> any any (
   classtype:web-application-attack;
   sid:9000001; rev:1;
 )
+
 ## Detection & Hunting
 Готовое Suricata-правило: [artifacts/driveby_redirect.sid](artifacts/driveby_redirect.sid)  
 Извлечённый вредоносный скрипт: [artifacts/malicious.js](artifacts/malicious.js)
-
 **Аналитик:** dedinkorea  
 **Дата:** декабрь 2025  
 **TLP:** WHITE
