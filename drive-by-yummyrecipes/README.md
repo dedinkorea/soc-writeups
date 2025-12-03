@@ -1,26 +1,27 @@
-# Drive-by Compromise (T1189) – yummyrecipesforme[.]com
-
-Реальный разбор PCAP из Google Cybersecurity Certificate  
-с правильными выводами уровня L1/L2 SOC-аналитика 2025 года
+# Drive-by Compromise (MITRE T1189) – yummyrecipesforme[.]com
 
 **Аналитик:** dedinkorea  
 **Дата:** декабрь 2025  
-**Уровень уверенности:** High  
 **TLP:** WHITE  
 
-### Краткое описание
-Легитимный сайт yummyrecipesforme[.]com был дефейснут через brute-force админки (дефолтные admin/admin).  
-Атакующий внедрил вредоносный JavaScript → client-side редирект всех посетителей на злонамеренный домен greatrecipesforme[.]com.
+### Цель кейса
+Практический разбор реального PCAP из Google Cybersecurity Certificate 
 
-### Файлы в репозитории
-- `README.md` – ты тут  
-- `analysis.md` – полный отчёт с IOC, timeline, MITRE ATT&CK, root cause и рекомендациями  
-- `yummy_defacement.pcapng` – оригинальный захват трафика  
-- `extracted_malicious.js` – (опционально) вытащенный скрипт
+### Исходные данные
+- Один захват трафика (yummy_defacement.pcapng)  
+- Симуляция жертвы, зашедшей на легитимный сайт  
+- Задача: определить вектор атаки, выделить IOC, предложить remediation и detection
 
-### Ключевые навыки, которые демонстрирует этот write-up
-- Анализ PCAP (Wireshark/tcpdump)  
-- Выделение и верификация IOC  
+### Мой вклад
+- Полный анализ в Wireshark  
+- Выделение IOC и цепочки компрометации  
 - MITRE ATT&CK mapping  
-- Написание отчёта уровня SOC L1/L2  
-- Рекомендации по remediation и hardening
+- Написание Suricata/Sigma-правила  
+- Практические рекомендации по hardening
+
+### Ограничения
+Учебный сценарий Google Qwiklabs. Все выводы и правила протестированы на реальных инструментах.
+
+**Артефакты:** папка [artifacts/](artifacts/)  
+**Подробный отчёт:** [analysis.md](analysis.md)  
+**Исходный трафик:** [yummy_defacement.pcapng](yummy_defacement.pcapng)
