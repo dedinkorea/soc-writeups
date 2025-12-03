@@ -58,3 +58,7 @@ alert http any any -> any any (
   classtype:web-application-attack;
   sid:9000001; rev:1;
 )
+
+**Аналитик:** dedinkorea  
+**Дата:** декабрь 2025  
+**TLP:** WHITE
